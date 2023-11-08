@@ -30,7 +30,7 @@
 #include <errno.h>
 #include <sys/mman.h>
 
-#define assert(cond) if (!(cond)) __asm__ __volatile__ ("int $3")
+#define assert(cond) if (!(cond)) __builtin_trap()
 
 /* Object: One return from malloc/input to free. */
 struct __attribute__((packed)) object {
